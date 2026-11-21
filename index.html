@@ -1336,10 +1336,10 @@ body.menu-open .wa-fab,.lb.open~.wa-fab{display:none}
 .h-ticket b{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--blue)}
 .h-ticket-t{font-size:14px;font-weight:600;line-height:1.25}
 .h-ticket-p{grid-column:1/-1;font-size:13px;color:var(--muted)}
-.hero2:has(.reel) .hero2-copy{padding-bottom:140px}
-.hero2:has(.reel) .hero2-copy p{text-shadow:0 1px 14px rgb(0 0 0 / .55),0 0 2px rgb(0 0 0 / .35)}
-.hero2:has(.reel) .hero2-title{text-shadow:0 6px 40px rgb(0 0 0 / .25)}
-@media(max-width:700px){.reel-cap{display:none}.h-ticket{bottom:calc(var(--hsf,0px) + 14px);padding:11px 14px}.h-ticket b{font-size:21px}.hero2:has(.reel) .hero2-copy{padding-bottom:120px}}
+.hero2:has(.h-ticket) .hero2-copy{padding-bottom:140px}
+.hero2:has(.h-ticket) .hero2-copy p{text-shadow:0 1px 14px rgb(0 0 0 / .55),0 0 2px rgb(0 0 0 / .35)}
+.hero2:has(.h-ticket) .hero2-title{text-shadow:0 6px 40px rgb(0 0 0 / .25)}
+@media(max-width:700px){.reel-cap{display:none}.h-ticket{bottom:calc(var(--hsf,0px) + 14px);padding:11px 14px}.h-ticket b{font-size:21px}.hero2:has(.h-ticket) .hero2-copy{padding-bottom:120px}}
 @media(prefers-reduced-motion:reduce){.reel img{transition:none;transform:none}}
 
 /* ===== Высотный профиль Гранд-тура ===== */
@@ -1891,9 +1891,8 @@ function explorer(host,startName,startCat){
 
 V.home=()=>`
 <section class="hero2">
- <div class="reel" id="reel">${REEL.map((r,i)=>`<img src="${PIMG(r.k,1)}" alt="${r.n}"${i?' loading="lazy"':' class="on"'} decoding="async">`).join('')}</div>
+ ${ph('Юрты на берегу Сон-Куля на закате','hero-ph',PIMG('1480',1))}
  <div class="hero2-shade"></div>
- <p class="reel-cap" id="reelCap" aria-live="polite">${REEL[0].n}</p>
  ${(()=>{const g=tourById('grand7');return g?`<a href="#tour-${g.id}" class="h-ticket"><span class="h-ticket-k">Ближайший выезд</span><b>${g.dates[0][0]}</b><span class="h-ticket-t">${g.t}</span><span class="h-ticket-p">${priceTxt(g)}</span></a>`:''})()}
  <div class="hero2-copy wrap">
   <h1 class="hero2-title">Кыргызстан</h1>
